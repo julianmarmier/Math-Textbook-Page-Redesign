@@ -9,17 +9,21 @@ ul.nav-bar {
   width: 100%;
 }
 li a:hover:not(.active) {
-
+  background-color: #111;
 }
-li.active {
-
+li.active { /*#Will be orange*/
+  background-color: #4CAF50;
 }
 li.float-left {
-
+  float: left;
 }
 li.float-right {
-
+  float: right;
 }
 li.link {
-
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
