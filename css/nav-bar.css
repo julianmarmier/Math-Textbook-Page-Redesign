@@ -11,7 +11,7 @@ ul.nav-bar {
 li a:hover:not(.active) {
   background-color: #111;
 }
-a.current {
+a.active {
   background-color: #ffb600;
 }
 li.float-left {
@@ -24,7 +24,7 @@ a.nav-bar-link {
   display: block;
   color: white;
   text-align: center;
-  padding: 15px 40px;
+  padding: 10px 30px;
   text-decoration: none;
   font-size: 175%;
 }
