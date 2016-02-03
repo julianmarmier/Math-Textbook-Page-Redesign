@@ -8,10 +8,10 @@ ul.nav-bar {
   top: 0;
   width: 100%;
 }
-li a:hover:not(.active) {
+li a:hover:not(.current) {
   background-color: #111;
 }
-a.active {
+a.current {
   background-color: #ffb600;
 }
 li.float-left {
@@ -24,6 +24,6 @@ a.nav-bar-link {
   display: block;
   color: white;
   text-align: center;
-  padding: 25px 75px;
+  padding: 20px 60px;
   text-decoration: none;
 }
