@@ -17,6 +17,9 @@ a.active {
 li.float-left {
   float: left;
 }
+li.float-center {
+  float: center;
+}
 li.float-right {
   float: right;
 }
