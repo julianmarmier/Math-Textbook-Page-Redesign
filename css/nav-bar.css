@@ -11,7 +11,7 @@ ul.nav-bar {
 li a:hover:not(.active) {
   background-color: #111;
 }
-a.active {
+a.home {
   background-color: #ffb600;
 }
 li.float-left {
