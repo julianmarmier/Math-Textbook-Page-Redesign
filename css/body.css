@@ -1,3 +1,4 @@
+/*Main stuff:*/
 body {
     margin: 0;
     background-image: url("../pictures/background.png");
@@ -12,6 +13,7 @@ div.body {
     border: 3px solid black;
     opacity: 0.95;
 }
+/*Text stuff:*/
 p.h1 {
     font-size:400%;
     font-weight: bold;
@@ -26,6 +28,9 @@ p.h3 {
 }
 p.h4 {
     font-weight: bold;
+}
+p.center {
+    text-align: center;
 }
 a.link {
     color: #d03b00;
