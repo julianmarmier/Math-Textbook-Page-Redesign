@@ -12,3 +12,18 @@ div.body {
     border: 3px solid black;
     opacity: 0.95;
 }
+p.h1 {
+    font-size:400%;
+    font-weight: bold;
+}
+p.h2 {
+    font-size:300%;
+    font-weight: bold;
+}
+p.h3 {
+    font-size:200%;
+    font-weight: bold;
+}
+p.h4 {
+    font-weight: bold;
+}
