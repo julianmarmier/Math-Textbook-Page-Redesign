@@ -1,6 +1,9 @@
 ul.nav-bar {
   list-style-type: none;
-  margin: 0px 0px 50px;
+  margin-top: 0px;
+  margin-bottom: 50px;
+  margin-right: 0px;
+  margin-left: 0px;
   padding: 0;
   overflow: hidden;
   background-color: #333;
