@@ -1,9 +1,6 @@
 ul.nav-bar {
   list-style-type: none;
-  margin-top: 0px;
-  margin-bottom: 50px;
-  margin-right: 0px;
-  margin-left: 0px;
+  margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #333;
@@ -30,4 +27,7 @@ a.nav-bar-link {
   padding: 10px 20px;
   text-decoration: none;
   font-size: 130%;
+}
+div.white-space {
+  margin-top: 50px;
 }
