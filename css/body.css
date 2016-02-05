@@ -29,7 +29,7 @@ p.h3 {
 p.h4 {
     font-weight: bold;
 }
-p.center {
+div.center {
     text-align: center;
 }
 a.link {
