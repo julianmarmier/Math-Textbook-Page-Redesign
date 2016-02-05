@@ -9,4 +9,6 @@ div.body {
     width: 75%;
     margin: 75px auto;
     padding: 40px 60px;
+    border: 3px solid black;
+    opacity: 0.2;
 }
