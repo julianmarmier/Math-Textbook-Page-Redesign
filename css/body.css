@@ -27,3 +27,6 @@ p.h3 {
 p.h4 {
     font-weight: bold;
 }
+a.link {
+    color: #d03b00;
+}
