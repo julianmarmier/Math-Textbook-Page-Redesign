@@ -9,11 +9,8 @@ ul.nav-bar {
   width: 100%;
   z-index: 1;
 }
-li a:hover:not(.active) {
+li a:hover {
   background-color: #111;
-}
-a.active {
-  background-color: orange;
 }
 li.float-left {
   float: left;
@@ -23,7 +20,7 @@ li.float-right {
 }
 a.nav-bar-link {
   display: block;
-  color: white;
+  color: orange;
   text-align: center;
   padding: 15px 20px;
   text-decoration: none;
