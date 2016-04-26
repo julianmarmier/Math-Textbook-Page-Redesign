@@ -37,7 +37,7 @@ cd "$DIR"
 
 echo
 echo "OS Choices:"
-echo "  (A) Ubuntu 14.04.3 (64-bit)"
+echo "  (A) Ubuntu 16.04   (64-bit)"
 echo "  (B) Debian 8.3.0   (64-bit, internet installer)"
 echo "  (C) Other          (You'll have to manually enter a URL)"
 echo "  (D) Skip this step (You'll have to provide a path to the downloaded ISO.)"
@@ -47,7 +47,7 @@ read userOption
 echo
 if [ "$userOption" == "A" ]; then
 	echo "Downloading Ubuntu..."
-	if ! downloadFile "http://mirrors.mit.edu/ubuntu-releases/14.04.3/ubuntu-14.04.3-desktop-amd64.iso"
+	if ! downloadFile "http://mirrors.mit.edu/ubuntu-releases/16.04/ubuntu-16.04-desktop-amd64.iso"
 	then
 		exit 1
 	fi
