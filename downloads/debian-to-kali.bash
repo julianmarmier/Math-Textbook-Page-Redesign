@@ -76,6 +76,7 @@ echo "+---------------------WARNING!----------------------+"
 echo "|    DO NOT QUITE THIS PROGRAM FROM HERE ON OUT!    |"
 echo "+---------------------------------------------------+"
 echo "If you do not follow the above messages, it is extremely likely that you will brick this installation."
+sleep 3
 
 # Add Kali Repo
 echo "Adding Kali Repo..."
@@ -89,6 +90,10 @@ apt update -y
 # Upgrade system
 echo "Installing Kali..."
 apt dist-upgrade -y
+
+# Remove old packages
+echo "Removing old packages..."
+apt autoremove -y
 
 # Reboot
 echo "Thanks for using this script. Have a nice day."
