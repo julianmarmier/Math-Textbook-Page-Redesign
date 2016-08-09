@@ -61,39 +61,23 @@ then
 	exit 3
 fi
 
-# Lets update & upgrade current system
-echo "Updating current system..."
-apt update -y
-apt dist-upgrade -y
-
-# Last Chance
-echo "This is your last chance. There is no going back after 20 seconds."
-echo "Press Control + C to abort."
-sleep 20
-
-# Info messages
-echo "+---------------------WARNING!----------------------+"
-echo "|    DO NOT QUITE THIS PROGRAM FROM HERE ON OUT!    |"
-echo "+---------------------------------------------------+"
-echo "If you do not follow the above messages, it is extremely likely that you will brick this installation."
-sleep 3
-
 # Add Kali Repo
 echo "Adding Kali Repo..."
+apt-key adv --keyserver pgp.mit.edu --recv-keys ED444FF07D8D0BF6
 echo "# Kali Repo added by Debian to Kali tool, created by ETCG" > /etc/apt/sources.list
 echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/apt/sources.list
 
 # Update system
 echo "Updating the system..."
-apt update -y
+apt-get update -m
 
 # Upgrade system
 echo "Installing Kali..."
-apt dist-upgrade -y
+apt dist-upgrade -y --force-yes
 
 # Remove old packages
 echo "Removing old packages..."
-apt autoremove -y
+apt autoremove -y --force-yes
 
 # Reboot
 echo "Thanks for using this script. Have a nice day."
