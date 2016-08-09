@@ -28,7 +28,8 @@
 
 # Before we start
 echo "DISABLE SUSPEND AND SLEEP ON YOUR COMPUTER!"
-echo "ALSO, LEAVE YOUR COMPUTER ALONE DURING THIS PROCESS!"
+echo "ALSO, LEAVE YOUR COMPUTER ALONE DURING THIS PROCESS UNLESS PROMPTED FOR INPUT!"
+echo "DO NOT QUIT THIS PROGRAM!"
 echo "Continue? (y/n):"
 read answer
 if [ "$answer"=="y" ] || [ "$answer"=="Y" ]
