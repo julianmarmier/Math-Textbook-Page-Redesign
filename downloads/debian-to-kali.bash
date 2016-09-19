@@ -74,11 +74,13 @@ apt-get update -m
 
 # Upgrade system
 echo "Installing Kali..."
+apt purge -y rdnssd
 apt dist-upgrade -y --force-yes
+apt install -y kali-linux-full rdnssd
 
 # Remove old packages
 echo "Removing old packages..."
-apt autoremove -y --force-yes
+apt-get autoremove -y
 
 # Reboot
 echo "Thanks for using this script. Have a nice day."
