@@ -38,7 +38,7 @@ cd "$DIR"
 echo
 echo "OS Choices:"
 echo "  (A) Ubuntu 16.04   (64-bit)"
-echo "  (B) Debian 8.5.0   (64-bit, internet installer)"
+echo "  (B) Debian 8.6.0   (64-bit, internet installer)"
 echo "  (C) Other          (You'll have to manually enter a URL)"
 echo "  (D) Skip this step (You'll have to provide a path to the downloaded ISO.)"
 echo "Please enter the letter corresponding with your choice (A, B, C, or D):"
@@ -53,7 +53,7 @@ if [ "$userOption" == "A" ]; then
 	fi
 elif [ "$userOption" == "B" ]; then
 	echo "Downloading Debian..."
-	if ! downloadFile "http://gensho.acc.umu.se/debian-cd/8.5.0/amd64/iso-cd/debian-8.5.0-amd64-netinst.iso"
+	if ! downloadFile "http://gensho.acc.umu.se/debian-cd/8.6.0/amd64/iso-cd/debian-8.6.0-amd64-netinst.iso"
 	then
 		exit 1
 	fi
