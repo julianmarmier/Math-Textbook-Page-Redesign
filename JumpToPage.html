@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+	Copyright 2016 Gregory Conrad
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<html>
+	<head>
+		<title> Jump To Page </title>
+	</head>
+	<body>
+		<center>
+			<h1>Jump To Page In Honors Math 3 Textbook</h1>
+			<input name="pageNum" type="number" maxlength="3" id="pageNum" onkeypress='return !(event.keyCode === 8 || event.keyCode === 46 || event.keyCode === 37 || event.keyCode === 39)'/>
+			<br/><br/>
+			<button id="goButton" type="button">Go To Page</button>
+			<br/>
+			<script>
+				document.getElementById('goButton').onclick = function() {
+					var pg = document.getElementById("pageNum").value;
+					document.write("Redirecting you to page " + pg + "...");
+   					window.location = "http://view.etext.home2.pearsoncmg.com/ebook/linktoebook16.do?bookid=1012009&pageid=" + pg;
+				} ;
+			</script>
+			<br/><br/><br/><br/><br/><br/>
+			<p>Created By Gregory Conrad</p>
+		</center>
+	</body>
+</html>
