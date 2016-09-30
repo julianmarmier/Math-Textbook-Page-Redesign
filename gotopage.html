@@ -58,17 +58,30 @@
 			button {
 				padding: 1vw;
 				font-size: 80%;
-				border-radius: 12px;
+				border-radius: 20px;
+				border-style: solid;
+				background-color: rgba(0, 0, 0, 0.6);
+				color: #f2f2d2;
+				border-width: 0.25vw;
+				opacity: 0.92;
+			}
+			button:hover {
+				background-color: rgba(0, 0, 0, 0.75);
+				cursor: pointer;
 			}
 			input {
 				padding: 1vw;
-				border-radius: 12px;
+				border-radius: 20px;
+				border-style: solid;
+				background-color: rgba(255, 255, 255, 0.6);
 			}
 			h1 {
 				font-size: 200%;
+				opacity: 0.77;
 			}
 			p {
 				font-size: 85%;
+				opacity: 0.77;
 			}
 			br {
 				font-size: 1vh;
@@ -85,6 +98,7 @@
             <br/>
 			<input name="pageNum" type="number" maxlength="3" id="pageNum" onkeypress="return !(event.keyCode === 8 || event.keyCode === 46 || event.keyCode === 37 || event.keyCode === 39)"/>
 			<br/><br/><p>I'm In:</p>
+			<div style="padding:1vh;"></div>
 			<button id="math1" type="button">Math 1</button>
 			<button id="math2" type="button">Math 2</button>
             <button id="math3" type="button">Math 3</button>
