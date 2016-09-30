@@ -25,10 +25,35 @@
 				padding: 0;
 				margin: 0;
 				font-family: arial;
-				font-size: 130%;
+				font-size: 125%;
 			}
-			body {
-				background-color: orange;
+			div.pic {
+				background-image: url("/pictures/background.jpg");
+				position: fixed;
+				width: 100vw;
+				height: 100vh;
+				left: 0;
+				top: 0;
+  				z-index: 0;
+				-webkit-filter: blur(3px);
+				-moz-filter: blur(3px);
+				-o-filter: blur(3px);
+				-ms-filter: blur(3px);
+				filter: blur(3px);
+			}
+			div.shader {
+				background-color: gray;
+				opacity: 0.63;
+				width: 100vw;
+				height: 100vh;
+				position: fixed;
+				z-index: 1;
+			}
+			div.container {
+				position: absolute;
+				z-index: 2;
+				width: 100vw;
+				height: 100vh;
 			}
 			button {
 				padding: 1vw;
@@ -40,50 +65,43 @@
 			h1 {
 				font-size: 200%;
 			}
+			p {
+				font-size: 85%;
+			}
 		</style>
 	</head>
 	<body>
+		<div class="pic"></div>
+		<div class="shader"/></div>
+		<div class="container">
 		<center>
         	<br/>
 			<h1>Jump To Math Textbook Page</h1>
             <br/>
 			<input name="pageNum" type="number" maxlength="3" id="pageNum" onkeypress='return !(event.keyCode === 8 || event.keyCode === 46 || event.keyCode === 37 || event.keyCode === 39)'/>
 			<br/><br/>
-			<button id="math1" type="button">Math 1 (not working)</button>
-			<button id="math2" type="button">Math 2 (not working)</button>
-            		<button id="math3" type="button">Math 3</button>
-			<button id="math4" type="button">Math 4 (not working)</button>
-			<button id="math5" type="button">Math 5 (not working)</button>
+			<button id="math1" type="button">Math 1</button>
+			<button id="math2" type="button">Math 2</button>
+            <button id="math3" type="button">Math 3</button>
+			<button id="math4" type="button">Math 4</button>
+			<button id="math5" type="button">Math 5</button>
 			<br/>
 			<script>
-				/*document.getElementById('math1').onclick = function() {
-					var pg = document.getElementById("pageNum").value;
-					document.write("Redirecting you to page " + pg + "...");
-   					window.location = "http://view.etext.home2.pearsoncmg.com/ebook/linktoebook16.do?bookid=1012009&pageid=" + pg;
-				} ;
-				document.getElementById('math2').onclick = function() {
-					var pg = document.getElementById("pageNum").value;
-					document.write("Redirecting you to page " + pg + "...");
-   					window.location = "http://view.etext.home2.pearsoncmg.com/ebook/linktoebook16.do?bookid=1012009&pageid=" + pg;
-				} ;*/
 				document.getElementById('math3').onclick = function() {
 					var pg = document.getElementById("pageNum").value;
+					if (pg == "" || pg < 1) {
+						alert("You must enter a valid positive integer!");
+						return;
+					}
 					document.write("Redirecting you to page " + pg + "...");
    					window.location = "http://view.etext.home2.pearsoncmg.com/ebook/linktoebook16.do?bookid=1012009&pageid=" + pg;
 				} ;
-				/*document.getElementById('math4').onclick = function() {
-					var pg = document.getElementById("pageNum").value;
-					document.write("Redirecting you to page " + pg + "...");
-   					window.location = "http://view.etext.home2.pearsoncmg.com/ebook/linktoebook16.do?bookid=1012009&pageid=" + pg;
-				} ;
-				document.getElementById('math5').onclick = function() {
-					var pg = document.getElementById("pageNum").value;
-					document.write("Redirecting you to page " + pg + "...");
-   					window.location = "http://view.etext.home2.pearsoncmg.com/ebook/linktoebook16.do?bookid=1012009&pageid=" + pg;
-				} ;*/
 			</script>
-			<br/><br/><br/><br/>
+			<br/><br/>
+			<p>Please note that only Math 3 works to date.</p>
+			<br/>
 			<p>Created By Gregory Conrad</p>
 		</center>
+		</div>
 	</body>
 </html>
