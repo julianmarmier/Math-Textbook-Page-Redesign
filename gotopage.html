@@ -15,10 +15,8 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
-<!-- Please note that the favicon is in no way shape or form mine. It is not included under this site's license -->
 <html>
 	<head>
-		<link rel="shortcut icon" type="image/png" href="https://sproutenglish.s3.amazonaws.com/uploads/flashcard/image_thumbnail_color/2488/textbook-CT.png"/>
 		<title>Math Textbook</title>
         <style>
 			* {
@@ -28,18 +26,20 @@
 				font-size: 125%;
 			}
 			div.pic {
-				background-image: url("/pictures/background.jpg");
+				background-image: url("pictures/background.jpg");
 				position: fixed;
 				width: 100vw;
 				height: 100vh;
 				left: 0;
 				top: 0;
   				z-index: 0;
-				-webkit-filter: blur(3px);
-				-moz-filter: blur(3px);
-				-o-filter: blur(3px);
-				-ms-filter: blur(3px);
-				filter: blur(3px);
+				-webkit-filter: blur(4px);
+				-moz-filter: blur(4px);
+				-o-filter: blur(4px);
+				-ms-filter: blur(4px);
+				filter: blur(4px);
+				background-repeat: no-repeat;
+    			background-size: 100% 100%;
 			}
 			div.shader {
 				background-color: gray;
@@ -58,9 +58,11 @@
 			button {
 				padding: 1vw;
 				font-size: 80%;
+				border-radius: 25px;
 			}
 			input {
 				padding: 1vw;
+				border-radius: 25px;
 			}
 			h1 {
 				font-size: 200%;
@@ -81,15 +83,31 @@
         	<br/>
 			<h1>Go To Math Textbook Page</h1>
             <br/>
-			<input name="pageNum" type="number" maxlength="3" id="pageNum" onkeypress='return !(event.keyCode === 8 || event.keyCode === 46 || event.keyCode === 37 || event.keyCode === 39)'/>
+			<input name="pageNum" type="number" maxlength="3" id="pageNum" onkeypress="return !(event.keyCode === 8 || event.keyCode === 46 || event.keyCode === 37 || event.keyCode === 39)"/>
 			<br/><br/><p>I'm In:</p>
 			<button id="math1" type="button">Math 1</button>
 			<button id="math2" type="button">Math 2</button>
             <button id="math3" type="button">Math 3</button>
-			<button id="math4" type="button">Math 4</button>
-			<button id="math5" type="button">Math 5</button>
 			<br/>
 			<script>
+				/*document.getElementById('math1').onclick = function() {
+					var pg = document.getElementById("pageNum").value;
+					if (pg == "" || pg < 1) {
+						alert("You must enter a valid positive integer!");
+						return;
+					}
+					document.write("Redirecting you to page " + pg + "...");
+   					window.location = "http://view.etext.home2.pearsoncmg.com/ebook/linktoebook16.do?bookid=1012009&pageid=" + pg;
+				} ;
+				document.getElementById('math2').onclick = function() {
+					var pg = document.getElementById("pageNum").value;
+					if (pg == "" || pg < 1) {
+						alert("You must enter a valid positive integer!");
+						return;
+					}
+					document.write("Redirecting you to page " + pg + "...");
+   					window.location = "http://view.etext.home2.pearsoncmg.com/ebook/linktoebook16.do?bookid=1012009&pageid=" + pg;
+				} ;*/
 				document.getElementById('math3').onclick = function() {
 					var pg = document.getElementById("pageNum").value;
 					if (pg == "" || pg < 1) {
