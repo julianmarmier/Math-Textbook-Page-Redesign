@@ -47,7 +47,7 @@ read userOption
 echo
 if [ "$userOption" == "A" ]; then
 	echo "Downloading Ubuntu..."
-	if ! downloadFile "http://mirrors.mit.edu/ubuntu-releases/16.04/ubuntu-16.04-desktop-amd64.iso"
+	if ! downloadFile "http://mirror.pnl.gov/releases/16.04/ubuntu-16.04.2-desktop-amd64.iso"
 	then
 		exit 1
 	fi
@@ -79,6 +79,8 @@ echo "Converting the ISO to the needed format..."
 if ! sudo hdiutil convert -format UDRW -o "$IMGFILE" "$ISOFILE"
 then
 	echo "Conversion Failed."
+	echo "This is probably due to an invalid ISO file."
+	echo "If you used option A or B, please email me at contact@etcg.pw so I can resolve the issue."
 	echo "Quiting..."
 	exit 2
 else echo "Conversion Successful."
