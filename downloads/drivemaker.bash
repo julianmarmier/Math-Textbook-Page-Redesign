@@ -13,7 +13,9 @@
 ISOFILE="file.iso"
 IMGFILE="file.img.dmg"
 DIR="/tmp/etcg_drivemaker"
-DISK="/dev/" #Will be updated later
+DISK="/dev/"
+UBUNTU_VERSION="16.04.2"
+DEBIAN_VERSION="8.8.0"
 
 #Functions:
 function downloadFile {
@@ -37,8 +39,8 @@ cd "$DIR"
 
 echo
 echo "OS Choices:"
-echo "  (A) Ubuntu 16.04   (64-bit)"
-echo "  (B) Debian 8.6.0   (64-bit, internet installer)"
+echo "  (A) Ubuntu "$UBUNTU_VERSION
+echo "  (B) Debian "$DEBIAN_VERSION
 echo "  (C) Other          (You'll have to manually enter a URL)"
 echo "  (D) Skip this step (You'll have to provide a path to the downloaded ISO.)"
 echo "Please enter the letter corresponding with your choice (A, B, C, or D):"
@@ -53,7 +55,6 @@ if [ "$userOption" == "A" ]; then
 	fi
 elif [ "$userOption" == "B" ]; then
 	echo "Downloading Debian..."
-	DEBIAN_VERSION="8.8.0"
 	if ! downloadFile "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-"$DEBIAN_VERSION"-amd64-netinst.iso"
 	then
 		exit 1
