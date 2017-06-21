@@ -15,7 +15,7 @@ IMGFILE="file.img.dmg"
 DIR="/tmp/etcg_drivemaker"
 DISK="/dev/"
 UBUNTU_VERSION="16.04.2"
-DEBIAN_VERSION="8.8.0"
+DEBIAN_VERSION="9.0.0"
 
 #Functions:
 function downloadFile {
@@ -49,7 +49,7 @@ read userOption
 echo
 if [ "$userOption" == "A" ]; then
 	echo "Downloading Ubuntu..."
-	if ! downloadFile "http://mirror.pnl.gov/releases/16.04/ubuntu-16.04.2-desktop-amd64.iso"
+	if ! downloadFile "http://mirror.pnl.gov/releases/16.04/ubuntu-"$UBUNTU_VERSION"-desktop-amd64.iso"
 	then
 		exit 1
 	fi
