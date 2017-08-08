@@ -14,7 +14,7 @@ ISOFILE="file.iso"
 IMGFILE="file.img.dmg"
 DIR="/tmp/etcg_drivemaker"
 DISK="/dev/"
-UBUNTU_VERSION="16.04.2"
+UBUNTU_VERSION="16.04.3"
 DEBIAN_VERSION="9.1.0"
 
 #Functions:
