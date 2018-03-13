@@ -1,7 +1,0 @@
-#Setup:
-git clone <link>
-cd <project name>
-#Add Commit:
-git add --all
-git commit -m "<commit name>"
-git push -u origin master
