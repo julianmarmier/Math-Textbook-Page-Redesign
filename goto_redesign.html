@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<!--
+	Copyright 2016 Gregory Conrad
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<html>
+	<head>
+		<title>Math Textbook</title>
+      <style>
+
+				@import url('https://fonts.googleapis.com/css?family=Libre+Franklin:100,700');
+
+
+				* {
+					padding: 0;
+					margin: 0;
+					font-family: "Libre Franklin";
+				}
+
+				body {
+					transition: background-color 1s, color 1s;
+					overflow: hidden;
+				}
+
+				div.container {
+					margin-top: 5vh;
+					text-align: left;
+					position: absolute;
+					z-index: 2;
+					width: 80vw;
+					height: 100vh;
+					padding-left: 10%;
+					padding-right: 10%;
+				}
+
+				button {
+					padding: 1vw;
+					font-size: 3vw;
+					border-radius: 10px;
+					border-style: solid;
+					border-width: thin;
+					opacity: 0.92;
+					transition: .5s;
+					color: white;
+					outline: none;
+				}
+
+				.blue {
+					background-color: #149b9b;
+					border-color: #149b9b;
+				}
+				.blue:hover {
+					color: #149b9b;
+				}
+
+				.orange {
+					background-color: #ee5426;
+					border-color: #ee5426;
+				}
+				.orange:hover {
+					color: #ee5426;
+				}
+
+				.green {
+					background-color: #77aa2b;
+					border-color: #77aa2b;
+				}
+				.green:hover{
+					color: #77aa2b;
+				}
+
+				button:hover {
+					background-color: white;
+					border-color: white;
+					cursor: pointer;
+					transition: 0.5s, color 2s;
+					outline: none;
+				}
+
+				.hover {
+					background-color: white;
+					border-color: white;
+					cursor: pointer;
+					transition: 0.5s, color 2s;
+					outline: none;
+				}
+
+				input {
+					outline: none;
+					width: 90%;
+					color: inherit;
+					padding: 1vw;
+					font-size: 5vw;
+					border: none;
+					border-bottom: solid;
+					background-color: inherit;
+				}
+
+				::placeholder {
+					color: inherit;
+				}
+
+				h1 {
+					font-size: 7vw;
+				}
+
+				p {
+					font-size: 3vw;
+				}
+
+				br {
+					font-size: 1vh;
+				}
+
+				.modal {
+				    display: none; /* Hidden by default */
+				    position: fixed; /* Stay in place */
+				    z-index: 1; /* Sit on top */
+				    padding-top: 100px; /* Location of the box */
+				    left: 0;
+				    top: 0;
+				    width: 100%; /* Full width */
+				    height: 100%; /* Full height */
+				    overflow: auto; /* Enable scroll if needed */
+				    background-color: rgb(0,0,0); /* Fallback color */
+				    background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
+				}
+
+				/* Modal Header */
+				.modal-header {
+						color: white;
+				    padding: 16px 16px;
+						transition: background-color 1s, color 1s;
+				}
+
+				/* Modal Body */
+				.modal-body {
+					padding: 2px 16px;
+					background-color: white;
+
+					transition: background-color 1s, color 1s;
+				}
+
+				/* Modal Footer */
+				.modal-footer {
+				    padding: 16px 16px;
+				    background-color: inherit;
+				    color: white;
+						background-color: white;
+						text-align: center;
+
+						transition: background-color 1s, color 1s;
+				}
+
+				/* Modal Content */
+				.modal-content {
+				    position: relative;
+						background-color: white;
+						color: black;
+				    margin: auto;
+				    padding: 0;
+				    width: 80%;
+				    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+				    -webkit-animation-name: fadein;
+				    -webkit-animation-duration: 1s;
+				    animation-name: fadein;
+				    animation-duration: 1s;
+						font-size: 3vw;
+				}
+
+				.modal-content ul {
+					font-size: 2.5vw
+				}
+
+				@keyframes fadein {
+				    from {opacity: 0}
+				    to {opacity: 1}
+				}
+
+				.close {
+				    color: #fff;
+				    float: right;
+				    font-size: 2.5vw;
+
+						transition: color 1s;
+				}
+
+				.close:hover,
+				.close:focus {
+				    text-decoration: none;
+				    cursor: pointer;
+				}
+
+				.continue {
+					color: white;
+				}
+
+				.continue:hover {
+					background-color: white;
+				}
+
+				ul {
+					padding-left: 4.25vw;
+				}
+
+				.credits {
+					font-size: 4vh;
+					position: fixed;
+					writing-mode: vertical-rl;
+				}
+
+				.black {
+					background-color: black;
+					border-color: black;
+				}
+		</style>
+	</head>
+	<body>
+		<p class="credits">Created By Gregory Conrad • Design by Julian Marmier</p>
+		<div class="container">
+      <br/>
+			<h1>Go To Math Textbook Page</h1>
+      <br/>
+			<input name="pageNum" type="number" placeholder="Enter Textbook Page Number" maxlength="10" id="pageNum" onkeypress="return !(event.keyCode === 8 || event.keyCode === 46 || event.keyCode === 37 || event.keyCode === 39)"/>
+			<br/><br/><p>I'm In:</p>
+			<div style="padding:1vh;"></div>
+			<button id="math1" onclick="pullModal(this)" class="green" type="button" onmouseover="changeBackground(this)" onmouseout="revert(this)">Math 1</button>
+			<button id="math2" onclick="pullModal(this)" class="orange" type="button" onmouseover="changeBackground(this)" onmouseout="revert(this)">Math 2</button>
+      <button id="math3" onclick="pullModal(this)" class="blue" type="button" onmouseover="changeBackground(this)" onmouseout="revert(this)">Math 3</button>
+
+			<br/>
+			<script>
+
+				var changeBackground = function(type) {
+					var color = type.className
+					document.body.style.color = "white"
+
+					switch (color) {
+						case "green":
+								document.body.style.backgroundColor = "#77aa2b"
+								type.style.color = "#77aa2b"
+							break;
+						case "blue":
+								document.body.style.backgroundColor = "#149b9b"
+								type.style.color = "#149b9b"
+							break;
+						case "orange":
+								document.body.style.backgroundColor = "#ee5426"
+								type.style.color = "#ee5426"
+							break;
+						default:
+								document.body.style.backgroundColor = "white"
+								type.style.color = "white"
+						}
+					}
+
+					var revert = function(type) {
+						if (document.getElementById('modal').style.display !== "block") {
+						document.body.style.backgroundColor = "white"
+						document.body.style.color = "black"
+						type.style.color = "white"
+						}
+					}
+
+					var pullModal = function(type) {
+						var color = type.className
+						var modal = document.getElementById('modal')
+						var mcontent = document.getElementById('mcontent')
+						var button = document.getElementById('continue')
+						var header = document.getElementById('header')
+						var span = document.getElementsByClassName("close")[0];
+						var pg = document.getElementById("pageNum").value;
+						var mbody = document.getElementById("mbody")
+						var mfooter = document.getElementById("mfooter")
+						var mhead = document.getElementById("mhead")
+
+						var colorTitle;
+
+						if (pg == "" || pg < 1) {
+							alert("You must enter a valid positive integer!");
+							return;
+						}
+						else {
+							modal.style.display = "block"
+						}
+
+						type.classList.toggle(color)
+						type.classList.toggle("hover")
+
+						switch (color) {
+							case "green":
+									type.style.color = "#77aa2b"
+									mcontent.style.backgroundColor = "#77aa2b"
+									button.classList.toggle("green")
+									document.body.style.backgroundColor = "#77aa2b"
+
+									color = "#77aa2b"
+									colorTitle = "green"
+								break;
+							case "blue":
+									type.style.color = "#149b9b"
+									mcontent.style.backgroundColor = "#149b9b"
+									button.classList.toggle("blue")
+									document.body.style.backgroundColor = "#149b9b"
+
+									color = "#149b9b"
+									colorTitle = "blue"
+								break;
+							case "orange":
+									type.style.color = "#ee5426"
+									mcontent.style.backgroundColor = "#ee5426"
+									button.classList.toggle("orange")
+									document.body.style.backgroundColor = "#ee5426"
+
+									color = "#ee5426"
+									colorTitle = "orange"
+								break;
+						}
+
+						window.onclick = function(event) {
+		    			if (event.target == modal) {
+		        		modal.style.display = "none";
+								document.body.style.backgroundColor = "white"
+								document.body.style.color = "black"
+
+								button.classList.toggle(colorTitle)
+
+
+								type.style.color = "white";
+								type.classList.toggle(colorTitle)
+								type.classList.toggle("hover")
+	    				}
+						}
+
+						window.onmouseover = function(event) {
+							if (event.target == modal) {
+								mhead.style.backgroundColor = "lightgray"
+								mhead.style.color = "black"
+								span.style.color = "black"
+
+								button.classList.toggle("black")
+							}
+						}
+						window.onmouseout = function(event) {
+							if (event.target == modal) {
+								button.classList.toggle("black")
+
+								mhead.style.color = "white"
+								mhead.style.backgroundColor = "inherit"
+
+								span.style.color = "white"
+							}
+						}
+
+						span.onclick = function(event) {
+								modal.style.display = "none"
+								document.body.style.backgroundColor = "white"
+								document.body.style.color = "black"
+
+								button.classList.toggle(colorTitle)
+
+								type.style.color = "white";
+								type.classList.toggle(colorTitle)
+								type.classList.toggle("hover")
+						}
+						button.onclick = function() {
+							switch (colorTitle) {
+								case "green":
+									document.write("<div style=\"font-family: system-ui; font-size: 10vw; font-weight: 100\">Redirecting you to page " + pg + "...</div>");
+									window.location = "http://view.etext.home2.pearsoncmg.com/ebook/linktoebook16.do?bookid=1008796&pageid=" + pg;
+									break;
+								case "orange":
+								document.write("<div style=\"font-family: system-ui; font-size: 10vw; font-weight: 100\">Redirecting you to page " + pg + "...</div>");
+									window.location = "http://view.etext.home2.pearsoncmg.com/ebook/linktoebook16.do?bookid=1008798&pageid=" + pg;
+									break;
+								case "blue":
+									document.write("<div style=\"font-family: system-ui; font-size: 10vw; font-weight: 100\">Redirecting you to page " + pg + "...</div>");
+									window.location = "http://view.etext.home2.pearsoncmg.com/ebook/linktoebook16.do?bookid=1012009&pageid=" + pg;
+								default:
+
+							}
+						}
+
+						button.onmouseover = function() {
+							mbody.style.backgroundColor = color
+							mbody.style.color = "white"
+
+							mfooter.style.backgroundColor = color
+
+							mhead.style.backgroundColor = "white"
+							mhead.style.color = color
+
+							span.style.color = color
+						}
+
+						button.onmouseout = function() {
+							mbody.style.backgroundColor = "white"
+							mbody.style.color = "black"
+
+							mfooter.style.backgroundColor = "white"
+
+							mhead.style.color = "white"
+							mhead.style.backgroundColor = "inherit"
+
+							span.style.color = "white"
+						}
+
+						span.onmouseover = function() {
+							mhead.style.backgroundColor = "lightgray"
+							mhead.style.color = "black"
+							span.style.color = "black"
+
+							button.classList.toggle("black")
+						}
+						span.onmouseout = function() {
+							button.classList.toggle("black")
+
+							mhead.style.color = "white"
+							mhead.style.backgroundColor = "inherit"
+
+							span.style.color = "white"
+						}
+					}
+			</script>
+
+			<div id="modal" class="modal">
+				<div id="mcontent" class="modal-content">
+					<div id="mhead" class="modal-header">
+						<span class="close">&times;</span>
+						<span>You're about to open your textbook page</span>
+					</div>
+					<div id="mbody" class="modal-body">
+						<br>
+						<span>You'll be asked to enter the following:</span>
+						<br><br>
+							<ul>
+								<li>Username: Your School lexingtonma.org E-mail</li>
+								<li>Password: Your School Account Password</li>
+							</ul>
+					</div>
+					<div id="mfooter" class="modal-footer">
+						<button type="button" id="continue">Continue</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
